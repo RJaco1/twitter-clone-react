@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import "../../css/tweetBox.css";
-import { Avatar, Button } from "@material-ui/core";
+import React, { useState } from 'react';
+import '../../css/tweetBox.css';
+import { Avatar, Button } from '@material-ui/core';
 
 const TweetBox = () => {
   const [char, setCar] = useState(0);
@@ -15,7 +15,7 @@ const TweetBox = () => {
             onKeyUp={(e) => setCar(e.target.value.length)}
           />
         </div>
-        <span>{char}/256</span>
+        <span className="tweetBox__characters">{char}/256</span>
         <input
           className="tweetBox__imageInput form-control"
           placeholder="Optional: Enter image URL"
