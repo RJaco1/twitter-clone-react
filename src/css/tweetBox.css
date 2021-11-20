@@ -10,7 +10,8 @@
 }
 
 .tweetBox__input {
-  padding: 20px;
+  padding: 10px;
+  padding-bottom: 5px;
   display: flex;
 }
 
@@ -27,8 +28,10 @@
 .tweetBox__imageInput {
   border: none;
   padding: 10px;
+  margin-top: 5px;
   border-radius: 20px;
   margin-left: 5px;
+  margin-right: 5px;
 }
 
 .tweetBox__tweetButton {
@@ -42,4 +45,8 @@
   height: 40px !important;
   margin-top: 20px !important;
   margin-left: auto !important;
+}
+
+.tweetBox__characters {
+  text-align: right;
 }
