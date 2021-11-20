@@ -1,6 +1,9 @@
 import React from "react";
 import "../../css/feeds.css";
 import FlipMove from "react-flip-move";
+import TweetBox from "../tweetBox/TweetBox";
+
+import Post from "../post/Post";
 
 const Feed = () => {
   return (
@@ -9,9 +12,11 @@ const Feed = () => {
         <h2>Home</h2>
       </div>
 
-      {/*<TweetBox />*/}
+      <TweetBox />
 
-      <FlipMove></FlipMove>
+      <FlipMove>
+        <Post />
+      </FlipMove>
     </div>
   );
 };

@@ -18,7 +18,7 @@
 }
 
 .widgets__searchIcon {
-  color: gray;
+  color: rgba(128, 128, 128, 0.63);
 }
 
 .widgets__widgetContainer {
@@ -32,4 +32,5 @@
 .widgets__widgetContainer > h2 {
   font-size: 18px;
   font-weight: 800;
+  color: rgba(128, 128, 128, 0.63);
 }
