@@ -11,7 +11,7 @@ const TweetBox = () => {
           <Avatar src="https://picsum.photos/id/1025/50/50" />
           <textarea
             placeholder="What's happening?"
-            maxlength="250"
+            maxLength="250"
             onKeyUp={(e) => setCar(e.target.value.length)}
           />
         </div>

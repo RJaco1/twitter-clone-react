@@ -7,15 +7,14 @@ import { collection, onSnapshot } from "firebase/firestore";
 import TweetBox from "../tweetBox/TweetBox";
 import Post from "../post/Post";
 
-//import { collection, getDocs } from "firebase/firestore";
-
 const Feed = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const getData = () => {
       onSnapshot(collection(db, "posts"), (snapshot) => {
-        setPosts(snapshot.docs.map((doc) => doc.data()));
+        const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}));
+        setPosts(data);
       });
     };
     getData();
@@ -32,13 +31,15 @@ const Feed = () => {
       <FlipMove>
         {posts.map((post) => (
           <Post
-            key={post.text}
+            key={post.id}
             displayName={post.displayName}
             username={post.username}
             verified={post.verified}
             text={post.text}
             avatar={post.avatar}
             image={post.image}
+            like={post.like}
+            postId={post.id}
           />
         ))}
       </FlipMove>

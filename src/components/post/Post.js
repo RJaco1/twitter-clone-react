@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState, useEffect } from "react";
 import { Avatar } from "@material-ui/core";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
@@ -7,9 +7,28 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
 
 import "../../css/post.css";
+import db from "../../services/firebase";
+import { doc, updateDoc } from "firebase/firestore";
 
 const Post = forwardRef(
-  ({ displayName, username, verified, text, image, avatar }, ref) => {
+  (
+    { displayName, username, verified, text, image, avatar, like, postId },
+    ref
+  ) => {
+    const [color, setColor] = useState("");
+
+    useEffect(() => {
+      like ? setColor("red") : setColor("");
+    }, [like]);
+
+    const updateLike = async () => {
+      like ? (like = false) : (like = true);
+      const postRef = doc(db, "posts", postId);
+      await updateDoc(postRef, {
+        like: like,
+      });
+    };
+
     return (
       <div className="post" ref={ref}>
         <div className="post__avatar">
@@ -34,7 +53,12 @@ const Post = forwardRef(
           <div className="post__footer">
             <ChatBubbleOutlineIcon fontSize="small" />
             <RepeatIcon fontSize="small" />
-            <FavoriteBorderIcon fontSize="small" />
+            <FavoriteBorderIcon
+              fontSize="small"
+              type="button"
+              onClick={() => updateLike()}
+              style={{ color: color }}
+            />
             <PublishIcon fontSize="small" />
           </div>
         </div>
