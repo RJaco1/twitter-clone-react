@@ -14,12 +14,14 @@
   display: flex;
 }
 
-.tweetBox__input > input {
+.tweetBox__input > textarea {
   flex: 1;
   margin-left: 20px;
   font-size: 20px;
   border: none;
   border-radius: 20px;
+  padding-top: 5px;
+  padding-left: 8px;
 }
 
 .tweetBox__imageInput {

@@ -44,3 +44,7 @@
 .post__avatar {
   padding: 20px;
 }
+
+.like {
+  color: red;
+}
