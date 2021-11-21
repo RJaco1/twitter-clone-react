@@ -20,7 +20,7 @@ You will also see any lint errors in the console.
 
 ### `Login page`
 
-You can log in using *`testemail3@testemail.com`* and password '123456'.\
+You can log in using *`testemail3@testemail.com`* and password `123456`.\
 Or you can create your own account.
 
 ### `app features`
