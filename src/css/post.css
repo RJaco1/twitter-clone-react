@@ -25,6 +25,16 @@
   font-size: 15px;
 }
 
+.post__headerText {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post__headerText > h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
 .post__headerText > h3 {
   font-size: 15px;
   margin-bottom: 5px;
