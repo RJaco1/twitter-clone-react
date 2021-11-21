@@ -34,18 +34,6 @@
   margin-right: 5px;
 }
 
-.tweetBox__followButton {
-  margin-top: 0px;
-  margin-bottom: 5px;
-  background-color: var(--twitter-color) !important;
-  border: none !important;
-  color: white !important;
-  font-weight: 900 !important;
-  text-transform: inherit !important;
-  border-radius: 30px !important;
-  align-self: flex-end;
-}
-
 .tweetBox__tweetButton {
   background-color: var(--twitter-color) !important;
   border: none !important;

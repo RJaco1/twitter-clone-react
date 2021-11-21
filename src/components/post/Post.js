@@ -18,7 +18,7 @@ const Post = forwardRef(
   ) => {
     const [color, setColor] = useState('');
     const [show, setShow] = useState(false);
-    const [followStyle, setFollowStyle] = useState(false);
+    const [followStyle, setFollowStyle] = useState('tweetBox__followButton');
     const [follow, setFollow] = useState('Follow');
 
     const handleClose = () => setShow(false);
@@ -39,8 +39,10 @@ const Post = forwardRef(
     const updateFollow = () => {
       if (follow === 'Follow') {
         setFollow('Unfollow');
+        setFollowStyle('tweetBox__unfollowButton');
       } else {
         setFollow('Follow');
+        setFollowStyle('tweetBox__followButton');
       }
     };
 
@@ -61,7 +63,7 @@ const Post = forwardRef(
               </h3>
               <Button
                 type="submit"
-                className="tweetBox__followButton"
+                className={followStyle}
                 onClick={updateFollow}
               >
                 {follow}

@@ -54,3 +54,27 @@
 .post__avatar {
   padding: 20px;
 }
+
+.tweetBox__followButton {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  background-color: var(--twitter-color) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  border-radius: 30px !important;
+  align-self: flex-end;
+}
+
+.tweetBox__unfollowButton {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  border-color: #2196F3;
+    background-color:#0f2537;
+    color: white !important;
+    font-weight: 900 !important;
+  text-transform: inherit !important;
+  border-radius: 30px !important;
+  align-self: flex-end;
+  }
