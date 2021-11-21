@@ -5,6 +5,7 @@ import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
 import RepeatIcon from "@material-ui/icons/Repeat";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
+import { Modal, Button, Row } from "react-bootstrap";
 
 import "../../css/post.css";
 import db from "../../services/firebase";
@@ -16,6 +17,10 @@ const Post = forwardRef(
     ref
   ) => {
     const [color, setColor] = useState("");
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     useEffect(() => {
       like ? setColor("red") : setColor("");
@@ -42,6 +47,9 @@ const Post = forwardRef(
                 <span className="post__headerSpecial">
                   {verified && <VerifiedUserIcon className="post__badge" />} @
                   {username}
+                  <Button type="submit" className="tweetBox__tweetButton">
+                    follow
+                  </Button>
                 </span>
               </h3>
             </div>
@@ -49,7 +57,7 @@ const Post = forwardRef(
               <p>{text}</p>
             </div>
           </div>
-          <img src={image} alt="" />
+          <img src={image} alt="" type="button" onClick={handleShow} />
           <div className="post__footer">
             <ChatBubbleOutlineIcon fontSize="small" />
             <RepeatIcon fontSize="small" />
@@ -62,6 +70,19 @@ const Post = forwardRef(
             <PublishIcon fontSize="small" />
           </div>
         </div>
+
+        <Modal show={show} onHide={handleClose} centered>
+          <Modal.Body>
+            <Row>
+              <img src={image} alt="" />
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     );
   }
