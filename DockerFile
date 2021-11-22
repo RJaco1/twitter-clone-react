@@ -1,0 +1,18 @@
+# BUILD
+# docker build -t miniblog:0.2.0 -f DockerFile .
+# RUN
+# docker run -p 80:80 -d front-budget-tracker:0.2.0
+
+FROM node:16.13.0 as compilacion
+
+COPY . /opt/app
+
+WORKDIR /opt/app
+
+RUN npm install --force
+
+RUN npm run build
+
+FROM nginx:1.21.3
+
+COPY --from=compilacion /opt/app/build /usr/share/nginx/html

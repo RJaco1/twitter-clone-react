@@ -65,7 +65,7 @@ const Login = () => {
                 </div>
                 <div className="card shadow p-3 mb-5 bg-body rounded">
                     <div className="card-body">
-                        New to Budget Tracker? <Link to="/register">Create an account</Link>
+                        New to Twitter clone? <Link to="/register">Create an account</Link>
                     </div>
                 </div>
             </div>
